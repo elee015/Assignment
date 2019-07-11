@@ -116,6 +116,8 @@ const findEarliestAvailable = (schedules, duration) => {
     let minimumEndT = undefined;
     //find intersection
     for (let i=0; i<minimumSize; i++) {
+        //found, thus skip finding
+        if  (availStartTime !== null && minimumEndT !== null) break;
         for (let j=0; j<schedules.length; j++) {
             if (j === minimumIndex)
                 continue;
